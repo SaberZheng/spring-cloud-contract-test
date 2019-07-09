@@ -11,5 +11,5 @@ import java.util.Collection;
  */
 @Data
 public class Page {
-    private Collection<Customer> data;
+    private Collection<Author> data;
 }

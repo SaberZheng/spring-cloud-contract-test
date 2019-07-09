@@ -11,5 +11,12 @@
 
     <artifactId>spring-cloud-contract-consumer</artifactId>
 
+    <dependencies>
+        <dependency>
+            <artifactId>spring-cloud-contract-common</artifactId>
+            <groupId>com.ecut</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,7 +1,7 @@
 /**
  * @author Amy
  * @date 2019-07-09 17:18
- * @description:
+ * @description: 契约
  */
 
 import org.springframework.cloud.contract.spec.Contract

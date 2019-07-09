@@ -12,13 +12,22 @@
     <artifactId>spring-cloud-contract-common</artifactId>
 
     <dependencies>
+        <!--JOOQ -->
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>3.0.0-beta-1</version>
-            <type>pom</type>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.11.11</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+            <version>3.11.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+            <version>3.11.11</version>
+        </dependency>
     </dependencies>
 
 </project>

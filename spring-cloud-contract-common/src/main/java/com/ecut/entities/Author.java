@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
-
-    private Long id;
-
-    private String name;
+public class Author {
+    private Integer id;
+    private String lastName;
+    private String firstName;
+    private Boolean deleted;
 }
