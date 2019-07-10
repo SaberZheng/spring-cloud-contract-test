@@ -1,6 +1,6 @@
 package com.ecut.test.services;
 
-import com.ecut.entities.Author;
+import com.ecut.test.entities.Author;
 import com.ecut.test.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

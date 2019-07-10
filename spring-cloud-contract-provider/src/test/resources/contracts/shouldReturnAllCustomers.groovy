@@ -1,3 +1,4 @@
+package contracts
 /**
  * @author Amy
  * @date 2019-07-09 17:18
@@ -10,7 +11,7 @@ import org.springframework.cloud.contract.spec.Contract
             description "返回所有顾客"
 
             request {
-                url "/api/customers"
+                url "/test/authors"
                 method GET()
             }
 
@@ -19,7 +20,7 @@ import org.springframework.cloud.contract.spec.Contract
                 headers {
                     contentType(applicationJson())
                 }
-                body("data": [[id: 1L, name: "sam"], [id: 2L, name: "andy"]])
+                body("data": [[id: 1, firstName: "sam", lastName:"zheng", deleted:false ], [id: 1, firstName: "andy", lastName:"tang", deleted:false ]])
             }
         }
 ]

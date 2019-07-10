@@ -1,6 +1,6 @@
 package com.ecut.test.repositories;
 
-import com.ecut.entities.Author;
+import com.ecut.test.entities.Author;
 import com.ecut.test.entitys.DataSource;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
@@ -12,7 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
 
-import static com.ecut.generated.tables.Author.AUTHOR;
+import static com.ecut.test.generated.tables.Author.AUTHOR;
 
 /**
  * @author Amy

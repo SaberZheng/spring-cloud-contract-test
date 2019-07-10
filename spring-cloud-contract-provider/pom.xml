@@ -19,19 +19,46 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <!--JOOQ -->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.11.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+            <version>3.11.11</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+            <version>3.11.11</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-meta</artifactId>
+                </exclusion>
+
+                <exclusion>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!--spring cloud contract -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-contract-verifier</artifactId>
             <version>2.1.2.RELEASE</version>
             <scope>test</scope>
-        </dependency>
-
-        <!-- MySql -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
         </dependency>
 
         <!-- junit -->
@@ -42,44 +69,39 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- spring -->
+        <!-- spring boot -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.1.8.RELEASE</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>spring-mock-mvc</artifactId>
+            <version>2.9.0</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-                <version>2.1.2.RELEASE</version>
+                <version>2.1.1.RELEASE</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <baseClassForTests>com.ecut.test</baseClassForTests>
+                    <baseClassForTests>com.ecut.test.AbstractContractTest</baseClassForTests>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -88,6 +110,23 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.allen.capturewebdata.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+
+
 </project>

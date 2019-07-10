@@ -1,4 +1,4 @@
-package com.ecut.entities;
+package com.ecut.test.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,12 +1,13 @@
 package com.ecut.test.controllers;
 
-import com.ecut.entities.Author;
-import com.ecut.entities.Page;
+import com.ecut.test.entities.Author;
+import com.ecut.test.entities.Page;
 import com.ecut.test.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -29,5 +30,13 @@ public class AuthorController {
         page.setData(authors);
         return page;
     }
+
+    /*@RequestMapping(value = "/authors", method = RequestMethod.GET)
+    public ModelAndView list() {
+        ModelAndView model = new ModelAndView("/list");
+        List<Author> authors = authorService.listAuthors();
+        model.addObject("authors", authors);
+        return model;
+    }*/
 
 }
